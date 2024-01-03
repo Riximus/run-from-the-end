@@ -1,0 +1,30 @@
+{
+	"name": "trying-out-kaboom",
+	"description": "A modified version of the Kaboom.js template with Vite and esbuild",
+	"keywords": [
+		"kaboom",
+		"kaboom.js",
+		"kaboomjs",
+		"vite",
+		"esbuild",
+		"template",
+		"starter"
+	],
+	"scripts": {
+		"dev:serve": "vite www",
+		"dev:watch": "vite build --watch",
+		"dev:start": "dev:serve & dev:watch",
+		"prod:build:vite": "vite build --force --minify",
+
+		"prod:build": "esbuild --bundle src/main.js --outfile=www/js/main.js --minify",
+		"prod:bundleW": "npm run prod:build && mkdir dist && powershell Compress-Archive -Path www -DestinationPath dist/game.zip",
+		"prod:bundleL": "npm run prod:build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\""
+	},
+	"dependencies": {
+		"kaboom": "^3000.1.17",
+		"vite": "^5.0.10"
+	},
+	"devDependencies": {
+		"esbuild": "^0.19.10"
+	}
+}
