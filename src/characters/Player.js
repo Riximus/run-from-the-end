@@ -24,9 +24,7 @@ export default class Player {
 
     makePlayer() {
         this.gameObject = k.add([
-            k.sprite("player-1-stand", {
-                anim: "stand"
-            }),
+            k.sprite("player-1-stand"),
             k.pos(this.initialPosX, this.initialPosY),
             k.area(),
             k.body(),

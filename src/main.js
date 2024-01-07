@@ -2,7 +2,10 @@ import k from "./kaboomContext";
 import rixiTestScene from "./scenes/rixiTestScene";
 import load from "./loader";
 
-load.sprites()
+load.sprites.player()
+load.levelSprites.testGround()
+
+k.setGravity(1200)
 
 const scenes = {
     rixiTestScene,
