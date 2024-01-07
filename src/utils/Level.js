@@ -11,6 +11,7 @@ export default class Level {
 
         k.addLevel(levelLayout, layerSettings)
 
+        // TODO: add this if we plan to use multiple layers
         /*this.layers = []
 
         for (const layerLayout of levelLayout) {

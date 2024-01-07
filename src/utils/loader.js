@@ -1,4 +1,4 @@
-import k from "./kaboomContext";
+import k from "../kaboomContext";
 
 const load = {
     sprites: {

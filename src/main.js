@@ -1,6 +1,6 @@
 import k from "./kaboomContext";
 import rixiTestScene from "./scenes/rixiTestScene";
-import load from "./loader";
+import load from "./utils/loader";
 
 load.sprites.player()
 load.levelSprites.testGround()

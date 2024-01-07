@@ -7,6 +7,7 @@ export function generateMappings(tileType) {
             k.area(),
             k.body({ isStatic: true }),
             k.offscreen(), // this is needed for performance reasons
+            "ground"
         ]
     }
 }

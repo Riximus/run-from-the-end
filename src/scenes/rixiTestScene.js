@@ -1,7 +1,7 @@
 import Player from "../characters/Player";
-import Camera from "../utils/Camera";
 import Level from "../utils/Level";
 import {level1Layout, level1Mappings} from "../levels/level1/rixiTestLayout";
+import {attachCamera} from "../utils/camera";
 
 export default function rixiTestScene(k) {
 
@@ -61,8 +61,7 @@ export default function rixiTestScene(k) {
         false
     );
 
-    const camera = new Camera();
-    camera.attach(player.gameObject)
+    attachCamera(player.gameObject)
 
     console.log(player);
 }
