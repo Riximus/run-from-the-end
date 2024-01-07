@@ -1,5 +1,11 @@
 import k from "../kaboomContext";
 
+/**
+ * Attaches the camera to a game object.
+ * @param attachedObject
+ * @param offsetX
+ * @param offsetY
+ */
 export function attachCamera (
     attachedObject,
     offsetX = 0,

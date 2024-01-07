@@ -1,11 +1,24 @@
 import k from "../kaboomContext";
 
 export default class Player {
+
+    /**
+     * Creates a new Player instance.
+     * @param {Object} config - The configuration object for the player.
+     * @param {number} config.posX - The player's initial X position.
+     * @param {number} config.posY - The player's initial Y position.
+     * @param {number} config.speed - The player's speed.
+     * @param {number} config.jumpForce - The player's jump force.
+     * @param {number} currentLevelScene - The current level's scene object.
+     * @param {boolean} isInLastLevel - Flag to indicate if the player is in the last level.
+     */
     constructor(
-        posX,
-        posY,
-        speed,
-        jumpForce,
+        {
+            posX,
+            posY,
+            speed,
+            jumpForce,
+        },
         currentLevelScene,
         isInLastLevel
     )
@@ -21,9 +34,10 @@ export default class Player {
         // Init methods for player object
         this.makePlayer()
         this.setPlayerControls()
-        this.infinteMovement()
+        this.infiniteMovement()
 
         // Init parameters for player object movement and animation control
+        // TODO: do something with these parameters
         this.previousPosY = this.gameObject.pos.y;
         this.previousPosX = this.gameObject.pos.x;
 
@@ -43,36 +57,48 @@ export default class Player {
 
     setPlayerControls() {
         // TODO: add animations
+        // TODO: speed for braking and acceleration can be changed
         k.onKeyDown("left", () => {
-            this.gameObject.move(-this.speed, 0);
+            this.gameObject.move(-this.speed/2, 0);
+            this.gameObject.flipX = true;
+        })
+
+        k.onKeyDown("a", () => {
+            this.gameObject.move(-this.speed/2, 0);
             this.gameObject.flipX = true;
         })
 
         k.onKeyDown("right", () => {
-            this.gameObject.move(this.speed, 0);
+            this.gameObject.move((this.speed+this.speed/2), 0);
             this.gameObject.flipX = false;
         })
 
-        k.onKeyDown("space", () => {
-            if (this.gameObject.isGrounded) {
-                this.gameObject.jump(this.jumpForce);
-            }
+        k.onKeyDown("d", () => {
+            this.gameObject.move((this.speed+this.speed/2), 0);
+            this.gameObject.flipX = false;
         })
 
         k.onKeyDown("up", () => {
             console.log(this.gameObject.isGrounded)
-            if (this.gameObject.isGrounded) {
+            if (this.gameObject.isGrounded()) {
                 this.gameObject.jump(this.jumpForce);
-                console.log("jump");
             }
-            else {
-                this.gameObject.move(0, -this.speed);
-                console.log("climb");
+        })
+
+        k.onKeyDown("space", () => {
+            if (this.gameObject.isGrounded()) {
+                this.gameObject.jump(this.jumpForce);
+            }
+        })
+
+        k.onKeyDown("w", () => {
+            if (this.gameObject.isGrounded()) {
+                this.gameObject.jump(this.jumpForce);
             }
         })
     }
 
-    infinteMovement() {
+    infiniteMovement() {
         k.onUpdate(() => {
             this.gameObject.move(this.speed, 0)
         })

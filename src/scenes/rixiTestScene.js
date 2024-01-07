@@ -2,6 +2,7 @@ import Player from "../characters/Player";
 import Level from "../utils/Level";
 import {level1Layout, level1Mappings} from "../levels/level1/rixiTestLayout";
 import {attachCamera} from "../utils/camera";
+import {basePlayerConfig} from "../levels/config";
 
 export default function rixiTestScene(k) {
 
@@ -53,10 +54,7 @@ export default function rixiTestScene(k) {
     level1.drawMapLayout(level1Layout, level1Mappings)
 
     const player = new Player(
-        100,
-        100,
-        250,
-        500,
+        basePlayerConfig,
         1,
         false
     );

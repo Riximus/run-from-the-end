@@ -1,5 +1,10 @@
 import k from "../kaboomContext.js";
 
+/**
+ * Generates mappings for a tile type.
+ * @param {string} tileType - The tile type.
+ * @returns {Object} - The mappings for the tile type.
+ */
 export function generateMappings(tileType) {
     return {
         '=': () => [
