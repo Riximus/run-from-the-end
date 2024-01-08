@@ -1,12 +1,18 @@
-import kaboom from "kaboom"
+import k from "./kaboomContext";
+import rixiTestScene from "./scenes/rixiTestScene";
+import load from "./utils/loader";
 
-const k = kaboom()
+load.sprites.player()
+load.levelSprites.testGround()
 
-k.loadSprite("bean", "sprites/bean.png")
+k.setGravity(1200)
 
-k.add([
-	k.pos(100, 100),
-	k.sprite("bean"),
-])
+const scenes = {
+    rixiTestScene,
+}
 
-k.onClick(() => k.addKaboom(k.mousePos()))
+for (const sceneName in scenes) {
+    k.scene(sceneName, () => scenes[sceneName](k));
+}
+
+k.go("rixiTestScene")
