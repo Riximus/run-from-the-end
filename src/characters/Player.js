@@ -53,6 +53,8 @@ export default class Player {
             // Tags
             "player",
         ]);
+
+        console.log(this.gameObject)
     }
 
     setPlayerControls() {
