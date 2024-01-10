@@ -45,7 +45,7 @@ export default class Player {
 
     makePlayer() {
         this.gameObject = k.add([
-            k.sprite("player-1-stand"),
+            k.sprite("p1_movement"),
             k.pos(this.initialPosX, this.initialPosY),
             k.area(),
             k.body(),
@@ -60,6 +60,9 @@ export default class Player {
     setPlayerControls() {
         // TODO: add animations
         // TODO: speed for braking and acceleration can be changed
+
+        this.gameObject.play('walk')
+
         k.onKeyDown("left", () => {
             this.gameObject.move(-this.speed/2, 0);
             this.gameObject.flipX = true;
