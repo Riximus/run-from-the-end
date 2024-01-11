@@ -14,21 +14,11 @@ const load = {
                     walk: {
                         from: 0,
                         to: 10,
-                        speed: 10,
+                        speed: 20,
                         loop: true,
                     },
-                    jump: {
-                        from: 10,
-                        to: 10,
-                        speed: 1,
-                        loop: false,
-                    },
-                    duck: {
-                        from: 11,
-                        to: 11,
-                        speed: 1,
-                        loop: false,
-                    },
+                    "jump": 11,
+                    "duck": 12,
                 },
             });
         }
