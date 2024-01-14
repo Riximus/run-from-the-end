@@ -4,8 +4,8 @@ export default class Level {
 
     drawMapLayout(levelLayout, mappings) {
         const layerSettings = {
-            tileWidth: 32,
-            tileHeight: 32,
+            tileWidth: 128,
+            tileHeight: 128,
             tiles: mappings,
         }
 

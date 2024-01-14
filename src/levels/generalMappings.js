@@ -13,6 +13,20 @@ export function generateMappings(tileType) {
             k.body({ isStatic: true }),
             k.offscreen(), // this is needed for performance reasons
             "ground"
+        ],
+        '/': () => [
+            k.sprite(`${tileType}-ground-hill-right`),
+            k.area(),
+            k.body({ isStatic: true }),
+            k.offscreen(), // this is needed for performance reasons
+            "ground"
+        ],
+        '\\': () => [
+            k.sprite(`${tileType}-ground-hill-left`),
+            k.area(),
+            k.body({ isStatic: true }),
+            k.offscreen(), // this is needed for performance reasons
+            "ground"
         ]
     }
 }

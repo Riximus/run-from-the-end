@@ -1,11 +1,11 @@
 import Player from "../characters/Player";
 import Level from "../utils/Level";
-import {level1Layout, level1Mappings} from "../levels/level1/rixiTestLayout";
 import {attachCamera} from "../utils/camera";
 import {basePlayerConfig} from "../levels/config";
 
-export default function rixiTestScene(k) {
+import { buildLevel } from "../levels/utils/levelGenerator";
 
+export default function rixiTestScene(k) {
     /*const grassGround = k.add([
         k.rect(1280, 50),
         k.pos(0, 670),
@@ -50,8 +50,10 @@ export default function rixiTestScene(k) {
 
     const level1 = new Level();
 
+    const level = buildLevel("plain", 5, 0.1);
+
     level1.drawBackground("bg");
-    level1.drawMapLayout(level1Layout, level1Mappings)
+    level1.drawMapLayout(level.levelLayout, level.levelMappings)
 
     const player = new Player(
         basePlayerConfig,
