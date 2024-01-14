@@ -45,62 +45,83 @@ export default class Player {
 
     makePlayer() {
         this.gameObject = k.add([
-            k.sprite("player-1-stand"),
+            k.sprite("p1_movement", {anim: "walk"}),
             k.pos(this.initialPosX, this.initialPosY),
-            k.area(),
+            k.area({shape: new k.Rect(k.vec2(22, 20), 45, 80)}),
             k.body(),
 
             // Tags
             "player",
         ]);
+
+        console.log(this.gameObject)
     }
 
     setPlayerControls() {
-        // TODO: add animations
-        // TODO: speed for braking and acceleration can be changed
-        k.onKeyDown("left", () => {
-            this.gameObject.move(-this.speed/2, 0);
+        const moveLeft = () => {
+            if(this.gameObject.curAnim() !== "walk") {
+                this.gameObject.play("walk");
+            }
+            this.gameObject.move(-this.speed / 2, 0);
             this.gameObject.flipX = true;
-        })
+        };
 
-        k.onKeyDown("a", () => {
-            this.gameObject.move(-this.speed/2, 0);
-            this.gameObject.flipX = true;
-        })
-
-        k.onKeyDown("right", () => {
-            this.gameObject.move((this.speed+this.speed/2), 0);
+        const moveRight = () => {
+            if(this.gameObject.curAnim() !== "walk") {
+                this.gameObject.play("walk");
+            }
+            this.gameObject.move(this.speed + this.speed / 2, 0);
             this.gameObject.flipX = false;
-        })
+        };
 
-        k.onKeyDown("d", () => {
-            this.gameObject.move((this.speed+this.speed/2), 0);
-            this.gameObject.flipX = false;
-        })
-
-        k.onKeyDown("up", () => {
-            console.log(this.gameObject.isGrounded)
+        const jump = () => {
             if (this.gameObject.isGrounded()) {
                 this.gameObject.jump(this.jumpForce);
+                this.gameObject.play("jump");
             }
-        })
+        };
 
-        k.onKeyDown("space", () => {
-            if (this.gameObject.isGrounded()) {
-                this.gameObject.jump(this.jumpForce);
-            }
-        })
+        const duck = () => {
+            this.gameObject.play("duck");
+            this.gameObject.area.shape.height = 55;
+        };
 
-        k.onKeyDown("w", () => {
-            if (this.gameObject.isGrounded()) {
-                this.gameObject.jump(this.jumpForce);
+        // Left movement
+        k.onKeyDown("left", moveLeft);
+        k.onKeyDown("a", moveLeft);
+
+        // Right movement
+        k.onKeyDown("right", moveRight);
+        k.onKeyDown("d", moveRight);
+
+        // Jumping
+        k.onKeyDown("up", jump);
+        k.onKeyDown("w", jump);
+        k.onKeyDown("space", jump);
+
+        // Ducking
+        k.onKeyDown("down", duck);
+        k.onKeyDown("s", duck);
+
+        k.onKeyRelease(() => {
+            if (k.isKeyReleased("down") || k.isKeyReleased("s")) {
+                this.gameObject.area.shape.height = 80;
+                // Play the appropriate animation when the player stands up
+                if (this.gameObject.isGrounded()) {
+                    this.gameObject.play("walk");
+                }
             }
-        })
+        });
     }
 
     infiniteMovement() {
         k.onUpdate(() => {
             this.gameObject.move(this.speed, 0)
+
+            // Check if the player is not ducking and is grounded before playing walk animation
+            if (this.gameObject.curAnim() !== "walk" && this.gameObject.isGrounded() && this.gameObject.area.shape.height === 80) {
+                this.gameObject.play("walk");
+            }
         })
     }
 }

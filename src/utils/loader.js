@@ -4,7 +4,23 @@ const load = {
     sprites: {
         player: ()  => {
             // TODO: Load a spriteatlas or player sprite instead of individual sprites?
-            k.loadSprite("player-1-stand", "sprites/player/p1/p1_stand.png")
+            //k.loadSprite("player-1-stand", "sprites/player/p1/p1_stand.png")
+            for (const [animName, animFile] of Object.entries(p1Sprites)) {
+                k.loadSprite(animName, `sprites/player/p1/${animFile}`);
+            }
+            k.loadSprite("p1_movement", "sprites/player/p1/p1_walk_spritesheet.png", {
+                sliceX: 13,  // Number of frames horizontally
+                anims: {
+                    walk: {
+                        from: 0,
+                        to: 10,
+                        speed: 20,
+                        loop: true,
+                    },
+                    "jump": 11,
+                    "duck": 12,
+                },
+            });
         }
     },
     levelSprites: {
@@ -16,3 +32,11 @@ const load = {
 }
 
 export default load;
+
+// Animations ---------------------------------------------------------------
+// Player 1
+const p1Sprites = {
+    "p1_stand": "p1_stand.png",
+    "p1_front": "p1_front.png",
+    "p1_hurt": "p1_hurt.png",
+};
