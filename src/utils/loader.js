@@ -1,6 +1,15 @@
 import k from "../kaboomContext";
 
 const load = {
+    ui: () => {
+        //k.loadSprite("colored-forest", "sprites/ui/colored_forest.png")
+        k.loadSprite("logo", "sprites/ui/hud_p1.png")
+    },
+    fonts: {
+        itim: () => {
+            k.loadFont("itim", "fonts/Itim-Regular.ttf")
+        }
+    },
     sprites: {
         player: ()  => {
             // TODO: Load a spriteatlas or player sprite instead of individual sprites?
