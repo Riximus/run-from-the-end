@@ -1,6 +1,6 @@
 import k from "../kaboomContext.js"
 
-class UiManager {
+export default class UiManager {
     displayMainMenu() {
         k.add([
             k.sprite("bg"),
@@ -15,7 +15,15 @@ class UiManager {
             k.scale(4)
         ])
 
-        this.displayBlinkingUiMessage("Press space to start", k.vec2(k.center().x, k.height() / 2))
+        this.displayBlinkingUiMessage(
+            "Press [ Enter ] to Start",
+            k.vec2(k.center().x, k.height() / 2)
+        )
+
+        // TODO: can be the first level or from a local storage save
+        k.onKeyPress("enter", () => {
+            k.go("rixiTestScene")
+        })
     }
 
     displayBlinkingUiMessage(content, position){
@@ -55,4 +63,3 @@ class UiManager {
     }
 }
 
-export const uiManager = new UiManager();

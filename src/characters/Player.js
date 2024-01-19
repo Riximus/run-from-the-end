@@ -47,8 +47,9 @@ export default class Player {
         this.gameObject = k.add([
             k.sprite("p1_movement", {anim: "walk"}),
             k.pos(this.initialPosX, this.initialPosY),
-            k.area({shape: new k.Rect(k.vec2(22, 20), 45, 80)}),
+            k.area({shape: new k.Rect(k.vec2(0, 0), 45, 80)}),
             k.body(),
+            k.anchor("bot"),
 
             // Tags
             "player",
