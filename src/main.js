@@ -5,6 +5,7 @@ import startMenu from "./scenes/startMenu";
 
 load.ui()
 load.sprites.player()
+load.sprites.enemies.wave()
 load.levelSprites.testGround()
 load.fonts.itim()
 

@@ -2,7 +2,8 @@ import Player from "../characters/Player";
 import Level from "../utils/Level";
 import {level1Layout, level1Mappings} from "../levels/level1/rixiTestLayout";
 import {attachCamera} from "../utils/camera";
-import {basePlayerConfig} from "../levels/config";
+import {baseEnemyConfig, basePlayerConfig} from "../levels/config";
+import Enemy from "../characters/ChasingEnemy";
 
 export default function rixiTestScene(k) {
 
@@ -58,6 +59,11 @@ export default function rixiTestScene(k) {
         1,
         false
     );
+
+    const enemy = new Enemy(baseEnemyConfig, 1);
+
+    enemy.handleCollisionWithPlayer();
+
 
     attachCamera(player.gameObject)
 
