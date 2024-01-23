@@ -100,12 +100,13 @@ export default class Player {
         k.onKeyDown("space", jump);
 
         // Ducking
+        /*
         k.onKeyDown("down", duck);
         k.onKeyDown("s", duck);
-
+*/
         k.onKeyRelease(() => {
             if (k.isKeyReleased("down") || k.isKeyReleased("s")) {
-                this.gameObject.area.shape.height = 80;
+                //this.gameObject.area.shape.height = 80;
                 // Play the appropriate animation when the player stands up
                 if (this.gameObject.isGrounded()) {
                     this.gameObject.play("walk");
@@ -119,7 +120,7 @@ export default class Player {
             this.gameObject.move(this.speed, 0)
 
             // Check if the player is not ducking and is grounded before playing walk animation
-            if (this.gameObject.curAnim() !== "walk" && this.gameObject.isGrounded() && this.gameObject.area.shape.height === 80) {
+            if (this.gameObject.curAnim() !== "walk" && this.gameObject.isGrounded() /*&& this.gameObject.area.shape.height === 80*/) {
                 this.gameObject.play("walk");
             }
         })
