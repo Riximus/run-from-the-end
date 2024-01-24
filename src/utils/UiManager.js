@@ -20,6 +20,8 @@ export default class UiManager {
             k.vec2(k.center().x, k.height() / 2)
         )
 
+        this.displayControls(1.5, k.vec2(30, k.height() - 170))
+
         // TODO: can be the first level or from a local storage save
         k.onKeyPress("enter", () => {
             k.go("rixiTestScene")
@@ -60,6 +62,15 @@ export default class UiManager {
             )
             message.enterState("flash-up")
         })
+    }
+
+    displayControls(size, position) {
+        const controls = k.add([
+            k.sprite("controls"),
+            k.area(),
+            k.pos(position),
+            k.scale(size),
+        ])
     }
 }
 
