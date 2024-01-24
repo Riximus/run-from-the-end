@@ -34,15 +34,17 @@ const load = {
     },
     levelSprites: {
         testGround: () => {
-            k.loadSprite("grass-ground", "sprites/levels/grass-ground.png")
-            k.loadSprite("grass-ground-hill-left", "sprites/levels/grass-ground-hill-left.png")
-            k.loadSprite("grass-ground-hill-right", "sprites/levels/grass-ground-hill-right.png")
-            k.loadSprite("bg", "sprites/levels/bg.png")
-            k.loadSprite("vector_tiles", "sprites/levels/vector_tiles.svg", {
-                sliceX: 18,
-                sliceY: 12,
+            k.loadSprite("bg-plain", "sprites/levels/bg-plain.png")
+            k.loadSprite("bg-iceAge", "sprites/levels/bg-iceAge.png")
+            k.loadSprite("bg-desert", "sprites/levels/bg-desert.png")
+            k.loadSprite("bg-aftermath", "sprites/levels/bg-aftermath.png")
+            k.loadSprite("bg-plague", "sprites/levels/bg-plague.png")
+
+            k.loadSprite("flag", "sprites/levels/flag.png")
+            k.loadSprite("grounds", "sprites/levels/spritesheet_ground.png", {
+                sliceX: 8,
+                sliceY: 16,
             });
-            k.loadSprite("triangle", "sprites/levels/triangle.svg");
         }
     }
 }

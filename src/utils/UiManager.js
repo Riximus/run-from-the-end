@@ -3,7 +3,7 @@ import k from "../kaboomContext.js"
 export default class UiManager {
     displayMainMenu() {
         k.add([
-            k.sprite("bg"),
+            k.sprite("bg-plain"),
             k.fixed(),
             k.scale(k.width(), k.height()),
         ])
@@ -22,8 +22,11 @@ export default class UiManager {
 
         // TODO: can be the first level or from a local storage save
         k.onKeyPress("enter", () => {
-            k.go("rixiTestScene")
+            k.go("gameScene")
         })
+
+        //Skip the menu for development
+        //k.go("gameScene")
     }
 
     displayBlinkingUiMessage(content, position){

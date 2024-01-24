@@ -9,9 +9,10 @@ import { generateMappings } from "../generalMappings";
  * @returns {Object} - Object with Level Layout and Level Mappings
  */
 export function buildLevel(levelTheme, levelLength, levelDifficulty) {
+    console.log("buildLevel -> Theme: " + levelTheme + ", Length: " + levelLength + ", Difficulty: " + levelDifficulty)
     // Levels contains fixed a height of 11
     let level = {
-        levelLayout: ["", "", "", "", "", "", "", "", "", "", ""],
+        levelLayout: [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "-"],
         levelMappings: null,
     }
 
@@ -33,11 +34,15 @@ export function buildLevel(levelTheme, levelLength, levelDifficulty) {
         };
     }
 
-    //Get Level Mappings
-    if (levelTheme === "plain") {
-        const mappings = generateMappings("grass");
-        level.levelMappings = mappings;
+    //Add end of level
+    const endOfLevel = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "F ", "=_"];
+    for (let heightPos = 0; heightPos < endOfLevel.length; heightPos++) {
+        level.levelLayout[heightPos] += endOfLevel[heightPos];
     }
+
+    //Get Level Mappings
+    const mappings = generateMappings(levelTheme);
+    level.levelMappings = mappings;
 
     if (!level.levelMappings) {
         console.error("Error - levelGenerator.js: No mappings found for asked LevelTheme");
