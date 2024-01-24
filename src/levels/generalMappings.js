@@ -8,21 +8,27 @@ import k from "../kaboomContext.js";
 export function generateMappings(tileType) {
     return {
         '=': () => [
-            k.sprite(`${tileType}-ground`),
+            k.sprite('vector_tiles', {
+                frame: 2,
+            }),
             k.area(),
             k.body({ isStatic: true }),
             k.offscreen(), // this is needed for performance reasons
             "ground"
         ],
         '/': () => [
-            k.sprite(`${tileType}-ground-hill-right`),
+            k.sprite('vector_tiles', {
+                frame: 6,
+            }),
             k.area(),
             k.body({ isStatic: true }),
             k.offscreen(), // this is needed for performance reasons
             "ground"
         ],
         '\\': () => [
-            k.sprite(`${tileType}-ground-hill-left`),
+            k.sprite('vector_tiles', {
+                frame: 5,
+            }),
             k.area(),
             k.body({ isStatic: true }),
             k.offscreen(), // this is needed for performance reasons

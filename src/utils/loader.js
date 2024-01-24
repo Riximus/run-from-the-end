@@ -38,6 +38,11 @@ const load = {
             k.loadSprite("grass-ground-hill-left", "sprites/levels/grass-ground-hill-left.png")
             k.loadSprite("grass-ground-hill-right", "sprites/levels/grass-ground-hill-right.png")
             k.loadSprite("bg", "sprites/levels/bg.png")
+            k.loadSprite("vector_tiles", "sprites/levels/vector_tiles.svg", {
+                sliceX: 18,
+                sliceY: 12,
+            });
+            k.loadSprite("triangle", "sprites/levels/triangle.svg");
         }
     }
 }
