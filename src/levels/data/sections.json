@@ -1,0 +1,56 @@
+[
+    {
+        "name": "test",
+        "forLevelTheme": ["plain", "iceAge", "desert", "aftermath", "plague"],
+        "difficulty": 0.1,
+        "map": [
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "       :.;                      ",
+            "=====_     -=======0000========="
+        ]
+    },
+    {
+        "name": "mountain",
+        "forLevelTheme": ["plain", "iceAge", "desert", "aftermath", "plague"],
+        "difficulty": 0.1,
+        "map": [
+            "                                ",
+            "                                ",
+            "                                ",
+            "             -_                 ",
+            "            -00_      =         ",
+            "           -0000==_  -0_        ",
+            "        -==00000000==000_       ",
+            "       -00000000000000000_      ",
+            "      -0000000000000000000_     ",
+            "    -=000000000000000000000=_   ",
+            "====0000000000000000000000000==="
+        ]
+    },
+    {
+        "name": "platforms",
+        "forLevelTheme": ["plain", "iceAge", "desert", "aftermath", "plague"],
+        "difficulty": 0.1,
+        "map": [
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                                ",
+            "                     :...;      ",
+            "         :..;   :..;       :;   ",
+            "     :.;                        ",
+            "====_                      -===="
+        ]  
+    }
+]
