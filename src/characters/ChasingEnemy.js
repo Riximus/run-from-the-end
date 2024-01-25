@@ -53,7 +53,7 @@ export default class Enemy {
     handleCollisionWithPlayer() {
         k.onCollide("enemy", "player", (e, p) => {
             console.log("Enemy has collided with the player!");
-            // k.go("gameOverScene");
+            k.go("gameOverScreen");
         });
     }
 
