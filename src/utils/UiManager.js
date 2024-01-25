@@ -21,6 +21,11 @@ export default class UiManager {
 
         this.displayControls(1.5, k.vec2(30, k.height() - 170))
 
+        this.displayText(
+            "Made by:\nburnt0rice\nRiximus",
+            k.vec2(k.width()-30*3.5, k.height()-170/2)
+        )
+
         // TODO: can be the first level or from a local storage save
         k.onKeyPress("enter", () => {
             k.go("gameScene")
@@ -42,8 +47,22 @@ export default class UiManager {
             k.vec2(k.center().x, k.height() / 2)
         )
 
+        this.displayText(
+            "[H]ome Screen",
+            k.vec2(k.center().x, k.height() / 1.7)
+        )
+
+        this.displayText(
+            "Made by:\nburnt0rice\nRiximus",
+            k.vec2(k.width()-30*3.5, k.height()-170/2)
+        )
+
         k.onKeyPress("r", () => {
             k.go("gameScene")
+        })
+
+        k.onKeyPress("h", () => {
+            k.go("startMenu")
         })
     }
 
@@ -59,11 +78,38 @@ export default class UiManager {
             k.vec2(k.center().x, k.height() / 2)
         )
 
+        this.displayText(
+            "[H]ome Screen",
+            k.vec2(k.center().x, k.height() / 1.7)
+        )
+
+        this.displayText(
+            "Made by:\nburnt0rice\nRiximus",
+            k.vec2(k.width()-30*3.5, k.height()-170/2)
+        )
+
         k.onKeyPress("r", () => {
             k.go("gameScene")
         })
+
+        k.onKeyPress("h", () => {
+            k.go("startMenu")
+        })
     }
 
+    displayText(content, position) {
+        const credits = k.add([
+            k.text(content, {
+                size: 28,
+                font: "itim",
+                align: "center",
+            }),
+            k.color(0,0,0),
+            k.anchor("center"),
+            k.pos(position)
+        ])
+
+    }
 
     displayBlinkingUiMessage(content, position){
         const message = k.add([
@@ -73,7 +119,6 @@ export default class UiManager {
                 align: "center",
             }),
             k.color(0,0,0),
-            k.area(),
             k.anchor("center"),
             k.pos(position),
             k.opacity(),
