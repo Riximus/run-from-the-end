@@ -1,7 +1,9 @@
 import Player from "../characters/Player";
+import Enemy from "../characters/ChasingEnemy";
 import Level from "../utils/Level";
 import {attachCamera} from "../utils/camera";
 import {basePlayerConfig} from "../levels/config";
+import {baseEnemyConfig} from "../levels/config";
 
 import { buildLevel } from "../levels/utils/levelGenerator";
 

@@ -4,7 +4,7 @@
 
 export const basePlayerConfig = {
     posX: 100,
-    posY: 100,
+    posY: 500,
     speed: 100, // TODO: speed is only this slow because for debugging reasons
     jumpForce: 500, // TODO: jumpForce is only this low because for debugging reasons
 }
