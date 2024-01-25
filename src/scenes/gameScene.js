@@ -27,5 +27,9 @@ export default function createScene(k) {
         false
     );
 
+    const enemy = new Enemy(baseEnemyConfig, 1);
+
+    enemy.handleCollisionWithPlayer();
+
     attachCamera(player.gameObject);
 }
