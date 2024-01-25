@@ -56,7 +56,7 @@ export default class UiManager {
         ])
 
         this.displayBlinkingUiMessage(
-            "You did it. Press [R] to play another level.",
+            "You did it (^U^)\nPress [R] to play another level.",
             k.vec2(k.center().x, k.height() / 2)
         )
 
@@ -71,6 +71,7 @@ export default class UiManager {
             k.text(content, {
                 size: 36,
                 font: "itim",
+                align: "center",
             }),
             k.color(0,0,0),
             k.area(),
