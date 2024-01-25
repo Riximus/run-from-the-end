@@ -95,6 +95,6 @@ TODOs.md
 .eslintcache
 
 node_modules/
-www/js/main.js
+www/main.js
 dist/
 package-lock.json

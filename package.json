@@ -15,7 +15,7 @@
 		"dev:watch": "vite build --watch",
 		"dev:start": "dev:serve & dev:watch",
 		"prod:build:vite": "vite build --force --minify",
-		"prod:build": "esbuild --bundle src/main.js --outfile=www/js/main.js --minify",
+		"prod:build": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
 		"prod:bundleW": "npm run prod:build && mkdir dist && powershell Compress-Archive -Path www -DestinationPath dist/game.zip",
 		"prod:bundleL": "npm run prod:build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\""
 	},
