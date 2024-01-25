@@ -37,20 +37,15 @@ export default class UiManager {
             k.fixed(),
             k.scale(k.width(), k.height()),
         ])
-        k.add([
-            k.sprite("logo"),
-            k.area(),
-            k.anchor("center"),
-            k.pos(k.center().x, k.height() / 4),
-            k.scale(4)
-        ])
 
         this.displayBlinkingUiMessage(
-            "Game Over",
+            "Game Over. [R]etry?",
             k.vec2(k.center().x, k.height() / 2)
         )
 
-        this.displayControls(1.5, k.vec2(30, k.height() - 170))
+        k.onKeyPress("r", () => {
+            k.go("gameScene")
+        })
     }
 
     displayBlinkingUiMessage(content, position){
