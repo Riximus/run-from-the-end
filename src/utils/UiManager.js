@@ -31,6 +31,28 @@ export default class UiManager {
         //k.go("gameScene")
     }
 
+    displayGameOverScreen() {
+        k.add([
+            k.sprite("bg-plain"),
+            k.fixed(),
+            k.scale(k.width(), k.height()),
+        ])
+        k.add([
+            k.sprite("logo"),
+            k.area(),
+            k.anchor("center"),
+            k.pos(k.center().x, k.height() / 4),
+            k.scale(4)
+        ])
+
+        this.displayBlinkingUiMessage(
+            "Game Over",
+            k.vec2(k.center().x, k.height() / 2)
+        )
+
+        this.displayControls(1.5, k.vec2(30, k.height() - 170))
+    }
+
     displayBlinkingUiMessage(content, position){
         const message = k.add([
             k.text(content, {
