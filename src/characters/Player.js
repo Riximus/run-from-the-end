@@ -124,5 +124,13 @@ export default class Player {
                 this.gameObject.play("walk");
             }
         })
+
+        this.gameObject.onCollide("dropZone", () => {
+            k.go("gameOverScreen");
+        });
+
+        this.gameObject.onCollide("flag", () => {
+            k.go("gameWinScreen");
+        });
     }
 }

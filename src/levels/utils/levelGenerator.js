@@ -10,9 +10,9 @@ import { generateMappings } from "../generalMappings";
  */
 export function buildLevel(levelTheme, levelLength, levelDifficulty) {
     console.log("buildLevel -> Theme: " + levelTheme + ", Length: " + levelLength + ", Difficulty: " + levelDifficulty)
-    // Levels contains fixed a height of 11
+    // Levels contains fixed a height of 14
     let level = {
-        levelLayout: [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "-"],
+        levelLayout: [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "-", " ", " ", "x"],
         levelMappings: null,
     }
 
@@ -35,7 +35,7 @@ export function buildLevel(levelTheme, levelLength, levelDifficulty) {
     }
 
     //Add end of level
-    const endOfLevel = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "F ", "=_"];
+    const endOfLevel = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "F ", "=_", "  ", "  ", "xx"];
     for (let heightPos = 0; heightPos < endOfLevel.length; heightPos++) {
         level.levelLayout[heightPos] += endOfLevel[heightPos];
     }

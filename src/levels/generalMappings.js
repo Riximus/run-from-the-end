@@ -78,5 +78,15 @@ export function generateMappings(levelTheme) {
         "flag"
     ]
 
+    //Add Drop Zone
+    mappings["x"] = () => [
+        k.rect(75, 75),
+        k.color(0, 0, 0),
+        k.opacity(1),
+        k.area(),
+        k.offscreen(), // this is needed for performance reasons
+        "dropZone"
+    ]
+
     return mappings;
 }
