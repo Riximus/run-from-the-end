@@ -23,6 +23,11 @@ export default function createScene(k) {
     level.drawBackground("bg-" + theme);
     level.drawMapLayout(levelContent.levelLayout, levelContent.levelMappings);
 
+    const music = k.play("bg-music", {
+        loop: true,
+        volume: 0.3,
+    });
+
     const player = new Player(
         basePlayerConfig,
         1,
@@ -34,4 +39,9 @@ export default function createScene(k) {
     enemy.handleCollisionWithPlayer();
 
     attachCamera(player.gameObject);
+
+    k.onSceneLeave(() => {
+        music.stop();
+        k.burp();
+    })
 }

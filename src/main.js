@@ -10,6 +10,7 @@ load.sprites.player()
 load.sprites.enemies.wave()
 load.levelSprites.testGround()
 load.fonts.itim()
+load.music()
 
 k.setGravity(1200)
 

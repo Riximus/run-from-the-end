@@ -6,6 +6,10 @@ const load = {
         k.loadSprite("logo", "sprites/ui/title-screen.png")
         k.loadSprite("controls", "sprites/ui/controls.png")
     },
+    music:() => {
+        k.loadSound("bg-music", "music/epic-music.mp3")
+        k.loadSound("reggae", "music/reggae.ogg")
+    },
     fonts: {
         itim: () => {
             k.loadFont("itim", "fonts/Itim-Regular.ttf")
