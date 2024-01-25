@@ -34,12 +34,14 @@ export default class Enemy {
         this.gameObject = k.add([
             k.sprite("enemy_wave"),
             k.pos(this.initialPosX, this.initialPosY),
-            k.area({shape: new k.Rect(k.vec2(20, 20), 50, 80)}),
-            k.body(),
+            k.area({shape: new k.Rect(k.vec2(0, 0), k.width(), k.height()*2)}),
+            k.anchor("center"),
 
             // Tags
             "enemy",
         ]);
+        this.gameObject.width = k.width();
+        this.gameObject.height = k.height()*1.5;
     }
 
     setEnemyMovement() {

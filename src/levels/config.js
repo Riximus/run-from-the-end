@@ -10,7 +10,7 @@ export const basePlayerConfig = {
 }
 
 export const baseEnemyConfig = {
-    posX: -500,
-    posY: -500,
-    speed: 110, // TODO: speed is only this slow because for debugging reasons
+    posX: -1000,
+    posY: 0,
+    speed: 150, // TODO: speed is only this slow because for debugging reasons
 }
