@@ -5,6 +5,7 @@ import gameScene from "./scenes/gameScene";
 
 load.ui()
 load.sprites.player()
+load.sprites.enemies.wave()
 load.levelSprites.testGround()
 load.fonts.itim()
 

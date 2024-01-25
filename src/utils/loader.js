@@ -31,7 +31,12 @@ const load = {
                     "duck": 12,
                 },
             });
-        }
+        },
+        enemies: {
+            wave: () => {
+                k.loadSprite("enemy_wave", "sprites/enemies/wave.png");
+            },
+        },
     },
     levelSprites: {
         testGround: () => {
