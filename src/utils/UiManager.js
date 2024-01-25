@@ -12,12 +12,11 @@ export default class UiManager {
             k.area(),
             k.anchor("center"),
             k.pos(k.center().x, k.height() / 4),
-            k.scale(4)
         ])
 
         this.displayBlinkingUiMessage(
             "Press [ Enter ] to Start",
-            k.vec2(k.center().x, k.height() / 2)
+            k.vec2(k.center().x, k.height() / 1.7)
         )
 
         this.displayControls(1.5, k.vec2(30, k.height() - 170))

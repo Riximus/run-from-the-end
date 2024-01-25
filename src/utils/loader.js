@@ -3,7 +3,7 @@ import k from "../kaboomContext";
 const load = {
     ui: () => {
         //k.loadSprite("colored-forest", "sprites/ui/colored_forest.png")
-        k.loadSprite("logo", "sprites/ui/hud_p1.png")
+        k.loadSprite("logo", "sprites/ui/title-screen.png")
         k.loadSprite("controls", "sprites/ui/controls.png")
     },
     fonts: {
