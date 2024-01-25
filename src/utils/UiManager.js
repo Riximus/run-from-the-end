@@ -48,6 +48,24 @@ export default class UiManager {
         })
     }
 
+    displayGameWinScreen() {
+        k.add([
+            k.sprite("bg-plain"),
+            k.fixed(),
+            k.scale(k.width(), k.height()),
+        ])
+
+        this.displayBlinkingUiMessage(
+            "You did it. Press [R] to play another level.",
+            k.vec2(k.center().x, k.height() / 2)
+        )
+
+        k.onKeyPress("r", () => {
+            k.go("gameScene")
+        })
+    }
+
+
     displayBlinkingUiMessage(content, position){
         const message = k.add([
             k.text(content, {
